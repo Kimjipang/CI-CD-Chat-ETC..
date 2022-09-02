@@ -5,6 +5,13 @@ name: Build and Deploy Spring Boot to AWS EC2
 on:
   push:
     branches: [ main ]
+    
+# 해당 코드에서 사용될 변수 설정
+env:
+  PROJECT_NAME: CI-CD-Practice
+  BUCKET_NAME: keemjipang
+  CODE_DEPLOY_APP_NAME: codeDeploy-test
+  DEPLOYMENT_GROUP_NAME: codeDeploy-test
 
 jobs:
   build:
