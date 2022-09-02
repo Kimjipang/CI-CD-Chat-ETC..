@@ -27,8 +27,8 @@ jobs:
       with:
         java-version: '11'
 	
-    ## gitignore한 파일 생성해주기
-    ## create application.properties
+    # gitignore한 파일 생성해주기
+    # create application.properties
     - name: make application-aws.properties
       if: true # branch가 develop일 때
       run: |
