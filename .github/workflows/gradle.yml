@@ -28,17 +28,14 @@ jobs:
         #gradlew 파일 실행권한 설정
       - name: Grant execute permission for gradlew
         run: chmod +x ./gradlew
-        shell: bash
 
         #빌드 시작
       - name: Build with Gradle
         run: ./gradlew build
-        shell: bash
 
         #프로젝트 zip파일로 압축
       - name: Make Zip File
         run: zip -qq -r ./$GITHUB_SHA.zip .
-        shell: bash
 
         #aws 접근 id, key
       - name: Configure AWS credentials
@@ -46,7 +43,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          aws-region: ap-northeast-2a
+          aws-region: ap-northeast-2
 
         # s3에 압축한 zip파일 업로드
       - name: Upload to S3
